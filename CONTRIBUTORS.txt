@@ -1,0 +1,9 @@
+I welcome contributions to the SublimeC0 project.
+
+When you contribute, please list your name and email under the contributors category in the specified format below.
+
+Creator
+-Mahmoud Al-Ismail, mahmoud.alismail@gmail.com
+
+Contributors
+-<yourName>, <yourEmail>
