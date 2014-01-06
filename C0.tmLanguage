@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>c0</string>
+		<string>h0</string>
+	</array>
+	<key>name</key>
+	<string>C0</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>types identifier</string>
+			<key>match</key>
+			<string>(int|bool|char|string|struct|void|typedef)\s</string>
+			<key>name</key>
+			<string>support.type.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>types[] identifier</string>
+			<key>match</key>
+			<string>(int|bool|char|string|void)\[[A-Za-z0-9_]*\]</string>
+			<key>name</key>
+			<string>support.type.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Constants identifier</string>
+			<key>match</key>
+			<string>(NULL|true|false|alloc|alloc_array|&amp;&amp;|\|\|)</string>
+			<key>name</key>
+			<string>constant.language.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>HEXdecimal identifier</string>
+			<key>match</key>
+			<string>0[xX][A-Za-z0-9_]+</string>
+			<key>name</key>
+			<string>constant.language.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>control identifier</string>
+			<key>match</key>
+			<string>(if|else|while|for|return|continue|break|assert|error)</string>
+			<key>name</key>
+			<string>keyword.control.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>string identifier</string>
+			<key>match</key>
+			<string>("|&lt;).*?("|&gt;)</string>
+			<key>name</key>
+			<string>string.quoted.double.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>comment identifier</string>
+			<key>match</key>
+			<string>//(?!@).*</string>
+			<key>name</key>
+			<string>comment.line.c0</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*(?!@)</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>comment.block.c0</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>comment</key>
+					<string>block comment identifier</string>
+					<key>match</key>
+					<string>.</string>
+					<key>name</key>
+					<string>comment.block.c0</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>line-annotations identifier</string>
+			<key>match</key>
+			<string>//@.*</string>
+			<key>name</key>
+			<string>keyword.source.c0</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*@</string>
+			<key>end</key>
+			<string>@\*/</string>
+			<key>name</key>
+			<string>keyword.source.c0</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>comment</key>
+					<string>block-annotations identifier</string>
+					<key>match</key>
+					<string>.</string>
+					<key>name</key>
+					<string>keyword.source.c0</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>compiler directives</string>
+			<key>match</key>
+			<string>#use\s</string>
+			<key>name</key>
+			<string>keyword.source.c0</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.c0</string>
+	<key>uuid</key>
+	<string>5b46c5ee-132d-4b3b-8eb8-98a197bc7480</string>
+</dict>
+</plist>
