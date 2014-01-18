@@ -1,10 +1,12 @@
 SublimeC0
 =========
 
-C0 for Sublime 2/3 that includes syntax highlighting &amp; simple build system
+C0 for Sublime Text 2/3 that includes syntax highlighting &amp; simple build system
 
 This is version 1.0 of the project. See Change Log for version differences.
 
+[C0] (c0.typesafety.net) is a type safe imperative language created by [Frank Pfenning] (www.cs.cmu.edu/~fp/) and is being used for the course 15-122 at Carnegie Mellon University.
+ 
 ### Version 1.0 ###
 
 ### Included ###
