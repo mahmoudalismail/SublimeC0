@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -7,61 +6,319 @@
 		<string>c0</string>
 		<string>h0</string>
 	</array>
+	<key>scopeName</key>
+	<string>source.c0</string>
+	<key>uuid</key>
+	<string>5b46c5ee-132d-4b3b-8eb8-98a197bc7480</string>
 	<key>name</key>
 	<string>C0</string>
 	<key>patterns</key>
 	<array>
 		<dict>
 			<key>comment</key>
-			<string>types identifier</string>
+			<string>Directives - Preprocessor</string>
 			<key>match</key>
-			<string>(int|bool|char|string|struct|void|typedef)\s</string>
+			<string>(#)(use|include|functions|help|locals|structs|exit|reload)\s+(&lt;\w+&gt;)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.source.c0</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.source.c0</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.source.c0</string>
+				</dict>
+			</dict>
 			<key>name</key>
-			<string>support.type.c0</string>
+			<string>keyword.source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>types[] identifier</string>
+			<string>Type - Typedef</string>
 			<key>match</key>
-			<string>(int|bool|char|string|void)\[[A-Za-z0-9_]*\]</string>
+			<string>typedef\s+</string>
 			<key>name</key>
-			<string>support.type.c0</string>
+			<string>entity.name.function.source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Constants identifier</string>
+			<string>Scope - Bracket</string>
 			<key>match</key>
-			<string>(NULL|true|false|alloc|alloc_array|&amp;&amp;|\|\|)</string>
+			<string>[\{\}]</string>
 			<key>name</key>
-			<string>constant.language.c0</string>
+			<string>variable.other.source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>HEXdecimal identifier</string>
-			<key>match</key>
-			<string>0[xX][A-Za-z0-9_]+</string>
+			<string>Function - Definition</string>
+			<key>begin</key>
+			<string>^\s*(void|bool|int|char|string|pixel|int_array)([\[\*]?\]?)\s+([A-Za-z_][A-Za-z0-9_]*)\s*(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.source.c0</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.source.c0</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.source.c0</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.source.c0</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.source.c0</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>source.c0</string>
+					<key>match</key>
+					<string>.</string>
+				</dict>
+			</array>
+			<key>contentName</key>
+			<string>source.c0</string>
 			<key>name</key>
-			<string>constant.language.c0</string>
+			<string>source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>control identifier</string>
+			<string>Structure - Definition</string>
 			<key>match</key>
-			<string>(if|else|while|for|return|continue|break|assert|error)</string>
+			<string>\b(struct)\s+([A-Za-z_][\w\d_]*\*?\[?\]?)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.source.c0</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.source.c0</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>constant.language.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Operator - Unary</string>
+			<key>match</key>
+			<string>!|~|:|\?|%|\-&gt;|\||&amp;|^|&lt;&lt;|&gt;&gt;|\+\-\/\*</string>
+			<key>name</key>
+			<string>constant.language.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Operator - Binary</string>
+			<key>match</key>
+			<string>==|&amp;&amp;|\|\||&lt;|&gt;|&lt;|&gt;</string>
+			<key>name</key>
+			<string>constant.other.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Operator - Assignment</string>
+			<key>match</key>
+			<string>=|\+\+|\-\-|\*\*</string>
+			<key>name</key>
+			<string>constant.other.source.c0</string>
+		</dict>
+
+		<dict>
+			<key>comment</key>
+			<string>Type - Array Identifier</string>
+			<key>match</key>
+			<string>(int|bool|char|string|pixel|int_array)\[\]\s</string>
+			<key>name</key>
+			<string>support.type.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Type - Pointer Identifier</string>
+			<key>match</key>
+			<string>(int|bool|char|string|pixel|int_array)\*\s</string>
+			<key>name</key>
+			<string>entity.name.class.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Type - Identifier</string>
+			<key>match</key>
+			<string>\b(bool|int|char|string|pixel|int_array)\b</string>
+			<key>name</key>
+			<string>support.type.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Constant - Integer</string>
+			<key>match</key>
+			<string>\b\d+\b</string>
+			<key>name</key>
+			<string>constant.numeric.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Constant - Hexadecimal</string>
+			<key>match</key>
+			<string>\b0[Xx][A-Fa-f0-9][A-Fa-f0-9]?[A-Fa-f0-9]?[A-Fa-f0-9]?[A-Fa-f0-9]?[A-Fa-f0-9]?[A-Fa-f0-9]?[A-Fa-f0-9]?</string>
+			<key>name</key>
+			<string>constant.numeric.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Constant - Character</string>
+			<key>match</key>
+			<string>'.*'</string>
+			<key>name</key>
+			<string>string.quoted.double.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Constant - String</string>
+			<key>begin</key>
+			<string>"</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>string.quoted.double.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Constant - Literals</string>
+			<key>match</key>
+			<string>void|NULL|null|true|false|alloc_array|m?alloc|assert|\\(old|length|result)</string>
+			<key>name</key>
+			<string>constant.language.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Keyword - Control</string>
+			<key>match</key>
+			<string>(if|else|while|for|return|continue|break)</string>
 			<key>name</key>
 			<string>keyword.control.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>string identifier</string>
-			<key>match</key>
-			<string>("|&lt;).*?("|&gt;)</string>
-			<key>name</key>
-			<string>string.quoted.double.c0</string>
+			<string>Function - Call</string>
+			<key>begin</key>
+			<string>([A-Za-z_][\w]*)\s*(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.class.source.c0</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.source.c0</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.source.c0</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>source.c0</string>
+					<key>match</key>
+					<string>.</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>comment identifier</string>
+			<string>Array - Access</string>
+			<key>begin</key>
+			<string>([A-Za-z_][\w]*)\s*(\[)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.source.c0</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.source.c0</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\])</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.source.c0</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>source.c0</string>
+					<key>match</key>
+					<string>.</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Annotation - Comment</string>
 			<key>match</key>
 			<string>//(?!@).*</string>
 			<key>name</key>
@@ -78,17 +335,33 @@
 			<array>
 				<dict>
 					<key>comment</key>
-					<string>block comment identifier</string>
+					<string>Annotation - Block Comment</string>
 					<key>match</key>
 					<string>.</string>
 					<key>name</key>
 					<string>comment.block.c0</string>
 				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Annotation - Highlight</string>
+					<key>match</key>
+					<string>\*\|\-\.</string>
+					<key>name</key>
+					<string>comment.c0</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>line-annotations identifier</string>
+			<string>Annotation - Contract</string>
+			<key>match</key>
+			<string>/[/\*]@(requires|ensures|loop_invariant|assert)\s|@\*/</string>
+			<key>name</key>
+			<string>keyword.storage.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Annotation - Block Contract</string>
 			<key>match</key>
 			<string>//@.*</string>
 			<key>name</key>
@@ -96,7 +369,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>/\*@</string>
+			<string>/\*@(requires|ensures|loop_invariant|assert) </string>
 			<key>end</key>
 			<string>@\*/</string>
 			<key>name</key>
@@ -105,7 +378,7 @@
 			<array>
 				<dict>
 					<key>comment</key>
-					<string>block-annotations identifier</string>
+					<string>Annotation - Block Contract</string>
 					<key>match</key>
 					<string>.</string>
 					<key>name</key>
@@ -113,18 +386,6 @@
 				</dict>
 			</array>
 		</dict>
-		<dict>
-			<key>comment</key>
-			<string>compiler directives</string>
-			<key>match</key>
-			<string>#use\s</string>
-			<key>name</key>
-			<string>keyword.source.c0</string>
-		</dict>
 	</array>
-	<key>scopeName</key>
-	<string>source.c0</string>
-	<key>uuid</key>
-	<string>5b46c5ee-132d-4b3b-8eb8-98a197bc7480</string>
 </dict>
 </plist>
