@@ -1,5 +1,0 @@
-Change Log for SublimeC0
-
--Version 1.0
-	-C0 Syntax Highlighting
-	-Simple build system (compiles your code and creates an executable named <yourFileName_test> without including any libraries or files)
