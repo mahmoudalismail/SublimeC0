@@ -1,4 +1,4 @@
-#Contributors list
+#Contributors List
 
 I welcome contributions to the SublimeC0 project.
 
