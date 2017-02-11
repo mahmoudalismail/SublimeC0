@@ -739,7 +739,7 @@
 			<key>comment</key>
 			<string>Credits</string>
 			<key>match</key>
-			<string>Ben Scott's Modification for Mahmoud Alismail's C0 Language Scoping</string>
+			<string>Austin Schick's update of Ben Scott's Modification for Mahmoud Alismail's C0 Language Scoping</string>
 			<key>name</key>
 			<string>variable.parameter.function.source.c0</string>
 		</dict>

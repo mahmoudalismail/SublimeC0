@@ -9,4 +9,5 @@ When you contribute, please list your name and email/github account under the co
 
 ##Contributors
 - Ben Scott, http://github.com/iasEnvy
+- Austin Schick, http://github.com/Schickmeister
 
