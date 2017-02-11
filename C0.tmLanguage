@@ -52,7 +52,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.source.co</string>
+					<string>variable.other.source.c0</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -70,27 +70,22 @@
 			<key>comment</key>
 			<string>Directives - Preprocessor</string>
 			<key>match</key>
-			<string>(#)(\w+)\s+([&lt;"]\w+\.?c?0?[&gt;"])</string>
+			<string>(#\w+)\s+([&lt;"]\w+\.?c?0?[&gt;"])</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.source.c0</string>
+					<string>keyword.control.import.c0</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>constant.language.source.c0</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>support.function.source.c0</string>
+					<string>variable.source.c0</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>keyword.source.c0</string>
+			<string>source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -411,12 +406,12 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.class.source.c0</string>
+					<string>variable.source.c0</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>constant.language.source.c0</string>
+					<string>keyword.operator.assignment.source.c0</string>
 				</dict>
 			</dict>
 			<key>patterns</key>
@@ -554,7 +549,7 @@
 			<key>match</key>
 			<string>!=|=[=&lt;&gt;]|[&lt;&gt;]=|&amp;&amp;|\|\||&lt;|&gt;</string>
 			<key>name</key>
-			<string>constant.other.source.c0</string>
+			<string>keyword.operator.logical.source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -562,7 +557,7 @@
 			<key>match</key>
 			<string>\^|\||&amp;|\-&gt;|\?|:|\%|\+|\-|\*|\/|=|\+\+|\-\-|\*\*|[/\^\*\+\-%&amp;\|]=</string>
 			<key>name</key>
-			<string>constant.language.source.c0</string>
+			<string>keyword.operator.assignment.source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -570,7 +565,7 @@
 			<key>match</key>
 			<string>!|~|:|\?|%|\-&gt;|\||&amp;|^|&lt;&lt;|&gt;&gt;</string>
 			<key>name</key>
-			<string>constant.language.source.c0</string>
+			<string>keyword.operator.bitwise.source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -642,11 +637,19 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Constant - Builtins</string>
+			<string>Constant - Builtin Functions</string>
 			<key>match</key>
-			<string>alloc_array|m?alloc|assert|\\(old|length|result)</string>
+			<string>alloc_array|m?alloc|assert|\\(old|length)</string>
 			<key>name</key>
-			<string>variable.source.c0</string>
+			<string>variable.function.source.c0</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Constant - Builtin Variables</string>
+			<key>match</key>
+			<string>\\result</string>
+			<key>name</key>
+			<string>variable.other.constant.source.c0</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -658,7 +661,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.class.source.c0</string>
+					<string>variable.function.source.c0</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -700,7 +703,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.source.c0</string>
+					<string>variable.other.source.c0</string>
 				</dict>
 				<key>2</key>
 				<dict>
